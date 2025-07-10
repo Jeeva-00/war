@@ -24,5 +24,22 @@ pipeline {
       }
     }
 
+    stage('build') {
+      parallel {
+        stage('a-build') {
+          steps {
+            echo 'building a....'
+          }
+        }
+
+        stage('b-build') {
+          steps {
+            echo 'building b....'
+          }
+        }
+
+      }
+    }
+
   }
 }
