@@ -3,12 +3,6 @@ pipeline {
   stages {
     stage('parallel tests') {
       parallel {
-        stage('parallel tests') {
-          steps {
-            echo 'testing parallel stages'
-          }
-        }
-
         stage('unit tests') {
           steps {
             sh 'echo "running unit tests..."'
