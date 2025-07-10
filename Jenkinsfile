@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('deploy to prod') {
       steps {
-        sh ' \'exit 1\''
+        sh '''uptime
+'''
       }
     }
 
