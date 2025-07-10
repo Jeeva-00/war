@@ -1,15 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('manual q/a approval') {
+    stage('Archive logs') {
       steps {
-        input 'approve to deploy to prod?'
-      }
-    }
-
-    stage('prod-deploy') {
-      steps {
-        echo 'deploying to prod...'
+        sh '''echo "Run on: $(date)" > build-info.log
+'''
+        archiveArtifacts 'build-info.log'
       }
     }
 
