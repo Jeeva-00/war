@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('prod-deploy') {
+      steps {
+        echo 'deploying to prod...'
+      }
+    }
+
   }
 }
