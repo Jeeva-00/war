@@ -1,11 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Archive logs') {
+    stage('deploy to prod') {
       steps {
-        sh '''echo "Run on: $(date)" > build-info.log
-'''
-        archiveArtifacts 'build-info.log'
+        sh ' \'exit 1\''
+      }
+    }
+
+    stage('monitor') {
+      steps {
+        echo 'monitoring....'
       }
     }
 
